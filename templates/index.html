@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Khodam</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Cek Khodam</h1>
+        <form method="POST">
+            <label for="name">Masukkan Nama:</label>
+            <input type="text" id="name" name="name" placeholder="Masukkan Nama" required>
+            <button type="submit">Cek Khodam</button>
+        </form>
+        {% if khodam %}
+            <h2>Halo {{ name }}, Khodam kamu adalah:</h2>
+            <p>{{ khodam }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
